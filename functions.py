@@ -13,7 +13,7 @@ def print_return():
 
 def open_csv_populate_lst():
     """Open a csv and populate a list with its contents."""
-    with open('original_members.csv') as f:
+    with open('csvs/members.csv') as f:
         lst = []
         f_csv = csv.reader(f)
         headings = next(f_csv)
@@ -83,7 +83,9 @@ def output_remaining_members(dct, lst1):
 def write_lst_to_csv(file, LST, HEADER):
     """Write list to csv. Update user that the csv has been exported
     successfully."""
-    with open(file, 'w') as out_file:
+    path = 'output/'
+    path_file = path + file
+    with open(path_file, 'w') as out_file:
         out_csv = csv.writer(out_file)
         out_csv.writerow(HEADER)
         for i in LST:
