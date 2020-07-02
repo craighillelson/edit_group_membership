@@ -1,4 +1,4 @@
-"""Functions to be used in edit_group_membership.py."""
+"""Functions."""
 
 import csv
 import functions
@@ -78,6 +78,11 @@ def output_remaining_members(dct, lst1):
             lst2.append(v)
     return lst2
     print_return()
+
+
+def update_user(update):
+    """Output user update."""
+    print(update)
 
 
 def write_lst_to_csv(file, LST, HEADER):
