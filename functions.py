@@ -74,7 +74,6 @@ def output_remaining_members(dct, lst1):
     lst2 = []
     for k, v in dct.items():
         if k not in lst1:
-            # print(k, v)
             print(v)
             lst2.append(v)
     return lst2
