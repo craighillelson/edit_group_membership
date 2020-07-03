@@ -22,5 +22,4 @@ def make_output_dir(a) -> Path:
 for directory in required_directories:
     make_output_dir(directory)
 
-functions.print_return()
-functions.update_user('required directories created successfully')
+functions.update_user('\nrequired directories created successfully\n')
