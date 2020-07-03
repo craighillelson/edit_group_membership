@@ -45,8 +45,8 @@ def output_options(dct):
     """Present user with options."""
     print_return()
     print('options')
-    for k, v in dct.items():
-        print(k, v)
+    for num, member in dct.items():
+        print(num, member)
 
 
 def prompt_user(a):
