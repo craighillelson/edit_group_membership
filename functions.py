@@ -31,8 +31,8 @@ def number_original_members(lst):
     with each member's assigned number as the key and their name as the value.
     """
     dct = {}
-    for i, member in enumerate(lst, 1):
-        dct[i] = member
+    for num, member in enumerate(lst, 1):
+        dct[num] = member
     return dct
 
 
@@ -74,7 +74,8 @@ def output_remaining_members(dct, lst1):
     lst2 = []
     for k, v in dct.items():
         if k not in lst1:
-            print(k, v)
+            # print(k, v)
+            print(v)
             lst2.append(v)
     return lst2
     print_return()
