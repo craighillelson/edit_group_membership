@@ -31,8 +31,8 @@ def number_original_members(lst):
     with each member's assigned number as the key and their name as the value.
     """
     dct = {}
-    for num, member in enumerate(lst, 1):
-        dct[num] = member
+    for i, member in enumerate(lst, 1):
+        dct[i] = member
     return dct
 
 
@@ -45,8 +45,8 @@ def output_options(dct):
     """Present user with options."""
     print_return()
     print('options')
-    for num, member in dct.items():
-        print(num, member)
+    for k, v in dct.items():
+        print(k, v)
 
 
 def prompt_user(a):
@@ -96,6 +96,4 @@ def write_lst_to_csv(file, LST, HEADER):
         for i in LST:
             out_csv.writerow([i])
 
-    print_return()
-    print(f'"{file}" exported successfully')
-    print_return()
+    print(f'\n"{file}" exported successfully\n')
