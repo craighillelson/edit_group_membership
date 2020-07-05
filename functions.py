@@ -43,13 +43,13 @@ def output_options(dct):
         print(num, member)
 
 
-def prompt_user(a):
+def prompt_user(lst2):
     """Prompt user for members to remove."""
     lst = []
     while True:
         print(f'\nEnter the number of corresponding members you\'d like to '
               f'skip or enter nothing to stop')
-        response = pyip.inputInt('> ', max=len(a), blank=True)
+        response = pyip.inputInt('> ', max=len(lst2), blank=True)
         if response == '':
             break
         elif response in lst:
