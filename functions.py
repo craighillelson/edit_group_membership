@@ -38,7 +38,7 @@ def get_list_of_keys(dct):
 
 def output_options(dct):
     """Present user with options."""
-    print('\noptions')
+    print('\nusers')
     for num, member in dct.items():
         print(num, member)
 
