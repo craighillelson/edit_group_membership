@@ -69,10 +69,10 @@ def output_remaining_members(dct, lst1):
     """
     print('\nremaining members')
     lst2 = []
-    for k, v in dct.items():
-        if k not in lst1:
-            print(v)
-            lst2.append(v)
+    for num, email in dct.items():
+        if num not in lst1:
+            print(email)
+            lst2.append(email)
     return lst2
     print('\n')
 
