@@ -31,8 +31,8 @@ def number_original_members(lst):
     with each member's assigned number as the key and their name as the value.
     """
     dct = {}
-    for i, member in enumerate(lst, 1):
-        dct[i] = member
+    for num, member in enumerate(lst, 1):
+        dct[num] = member
     return dct
 
 
@@ -43,19 +43,17 @@ def get_list_of_keys(dct):
 
 def output_options(dct):
     """Present user with options."""
-    print_return()
-    print('options')
-    for k, v in dct.items():
-        print(k, v)
+    print('\noptions')
+    for num, member in dct.items():
+        print(num, member)
 
 
 def prompt_user(a):
     """Prompt user for members to remove."""
     lst = []
     while True:
-        print_return()
-        print(f'Enter the number of corresponding members you\'d like to skip '\
-              f'(1 - {len(a)}) or enter nothing to stop')
+        print(f'\nEnter the number of corresponding members you\'d like to '\
+              f'skip (1 - {len(a)}) or enter nothing to stop')
         response = pyip.inputInt('> ', max=len(a), blank=True)
         if response == '':
             break
@@ -96,4 +94,6 @@ def write_lst_to_csv(file, LST, HEADER):
         for i in LST:
             out_csv.writerow([i])
 
-    print(f'\n"{file}" exported successfully\n')
+    print_return()
+    print(f'"{file}" exported successfully')
+    print_return()
