@@ -6,11 +6,6 @@ import pyinputplus as pyip
 from collections import namedtuple
 
 
-def print_return():
-    """Print return."""
-    print('\n')
-
-
 def open_csv_populate_lst():
     """Open a csv and populate a list with its contents."""
     with open('csvs/members.csv') as f:
@@ -52,11 +47,16 @@ def prompt_user(a):
     """Prompt user for members to remove."""
     lst = []
     while True:
-        print(f'\nEnter the number of corresponding members you\'d like to '\
-              f'skip (1 - {len(a)}) or enter nothing to stop')
+        print(f'\nEnter the number of corresponding members you\'d like to '
+              f'skip or enter nothing to stop')
         response = pyip.inputInt('> ', max=len(a), blank=True)
         if response == '':
             break
+        elif response in lst:
+            print('Already entered. Please select another number or enter '
+                  'return to quit.')
+        else:
+            pass
         lst = lst + [response]
 
     return lst
@@ -67,15 +67,14 @@ def output_remaining_members(dct, lst1):
     Filter the list of original members, excluding the members the user chose to
     skip. Populate a list with the remaining members.
     """
-    print_return()
-    print('remaining members')
+    print('\nremaining members')
     lst2 = []
     for k, v in dct.items():
         if k not in lst1:
             print(v)
             lst2.append(v)
     return lst2
-    print_return()
+    print('\n')
 
 
 def update_user(update):
@@ -94,6 +93,4 @@ def write_lst_to_csv(file, LST, HEADER):
         for i in LST:
             out_csv.writerow([i])
 
-    print_return()
-    print(f'"{file}" exported successfully')
-    print_return()
+    print(f'\n"{file}" exported successfully\n')
