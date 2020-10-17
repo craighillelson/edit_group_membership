@@ -1,9 +1,7 @@
 """Create required files and directories."""
 
-import csv
-import functions
 from pathlib import Path
-import datetime
+import functions
 
 required_directories = [
     'csvs',
@@ -11,9 +9,9 @@ required_directories = [
 ]
 
 
-def make_output_dir(a) -> Path:
+def make_output_dir(req_directory) -> Path:
     """Create required directories."""
-    output_dir = Path('.') / f'{a}'
+    output_dir = Path('.') / f'{req_directory}'
     output_dir.mkdir(exist_ok=True)
 
     return output_dir
